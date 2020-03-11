@@ -9,14 +9,21 @@
     </li>
 </ul>
 
-<div>
-    <label>Hero name:
-        <input #heroName />
-    </label>
+<div class="add-hero">
+
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+            <mat-label>Hero name</mat-label>
+            <input #heroName matInput placeholder="Ex. Alejandro" value=""/>
+        </mat-form-field>
+    <button mat-raised-button color="primary" (click)="add(heroName.value); heroName.value=''">Add</button>
+    </form>
+        
+<!--    <label>Hero name:-->
+<!--        <input #heroName/>-->
+<!--    </label>-->
     <!-- (click) passes input value to add() and then clears the input -->
-    <button (click)="add(heroName.value); heroName.value=''">
-        add
-    </button>
+
 </div>
 
 <app-hero-detail>
